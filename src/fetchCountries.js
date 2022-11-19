@@ -1,19 +1,15 @@
 export function fetchCountries(name) {
-    return fetch(`https://restcountries.com/v3.1/name/{name}?fields=name,capital,population,flags,languages`)
-    .then(response => {
+  return fetch(
+    `https://restcountries.com/v3.1/name/${name}?fields=name,capital,population,flags,languages`
+  ).then(response => {
     if (!response.ok) {
-      throw new Error(response.status);
+      throw new Error(response.statusText);
     }
     return response.json();
-  })
+  });
 }
 
-
-
-
-
-
-// v1.3 - версія имеет еще несколько полей, а также другой узел флага
+// v3.1 - версія имеет еще несколько полей, а также другой узел флага
 // ok – логическое значение: будет true, если код HTTP-статуса в диапазоне 200-299.
 // 200 (OK)	Стандартна відповідь для успішних HTTP-запитів.
 // status – код статуса HTTP-запроса, например 200.
@@ -29,5 +25,5 @@ export function fetchCountries(name) {
 // text() - парсить дані в простому текстовому форматі, наприклад .csv (табличні дані).
 // blob() - парсить дані, що описують файл, наприклад, зображення, аудіо або відео.
 
-// Метод fetch() принимает один обязательный аргумент — путь к данным, которые вы хотите получить. 
-// Он возвращает promise, который разрешается в(Response) независимо от того, был ли запрос удачным. 
+// Метод fetch() принимает один обязательный аргумент — путь к данным, которые вы хотите получить.
+// Он возвращает promise, который разрешается в(Response) независимо от того, был ли запрос удачным.
