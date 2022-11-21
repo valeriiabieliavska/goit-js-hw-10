@@ -24,7 +24,7 @@ function onSearch(event) {
           'Too many matches found. Please enter a more specific name.'
         );
       }
-      if (response.length >= 2 && response.length < 10) {
+      if (response.length >= 2 && response.length <= 10) {
         listCountry(response);
       }
       if (response.length === 1) {
